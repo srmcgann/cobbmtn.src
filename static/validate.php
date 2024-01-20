@@ -5,7 +5,7 @@
   $res = mysqli_query($link, $sql);
   $out = [];
   for($i = 0; $i < mysqli_num_rows($res); ++$i) {
-    $table = mysqli_fetch_assoc($res)['Tables_in_cobbmtn.new'];
+    $table = mysqli_fetch_assoc($res)['Tables_in_' . $db'];
     $sql = "SELECT * FROM $table";
     $res2 = mysqli_query($link, $sql);
     $content = [];
